@@ -1,0 +1,6 @@
+mixin heading(title)
+	+b.heading&attributes(attributes)
+		+e.title=title
+		if(block)
+			+e.desc
+				block
