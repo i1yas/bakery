@@ -1,19 +1,25 @@
+include ../wrapper/wrapper
 include ../icon/icon
 
 mixin header(data)
 	+b.header&attributes(attributes)
 		+e.navigation
-			+e.logo
-				| Gustoso
-			+e('nav').menu
-				- var topNavigation = data.topNavigation
-				- for(var i = 0; i < topNavigation.length; i++)
-					+e('span').menu-item=topNavigation[i]
-			+e.icons
-				+icon('twitter').icon
-				+icon('facebook').icon
-				+icon('instagram').icon
-		+e.baner
-			+e.title=data.title
-			+e.desc=data.desc
-		+e.icon
+			+wrapper
+				+e.logo
+					| Gustoso
+				+e('nav').menu
+					- var topNavigation = data.topNavigation
+					- for(var i = 0; i < topNavigation.length; i++)
+						+e('a').menu-item(href='#')=topNavigation[i]
+				+e.icons
+					+e('button').icon-btn
+						+icon('twitter').icon
+					+e('button').icon-btn
+						+icon('facebook').icon
+					+e('button').icon-btn
+						+icon('instagram').icon
+		+wrapper
+			+e.baner
+					+e.title=data.title
+					+e.desc=data.desc
+			+e.icon

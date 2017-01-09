@@ -1,2 +1,58 @@
 .header
 	display block
+	height 900px
+	color white
+	background-image url(../images/header/background.jpg)
+	background-position 50% 50%
+	background-size cover
+
+	&__wrapper
+		clearfix()
+
+	&__navigation
+		background-color rgba(86, 83, 76, .53)
+
+	&__logo
+		float left
+		font-family $scriptin
+		font-size 30px
+		line-height 55px
+	
+	&__menu
+		margin-left 4%
+		float left
+		line-height 70px
+	&__menu-item
+		padding-left 37px
+		font-family $alegreya
+		font-size 14px
+		text-transform uppercase
+		text-decoration none
+		color white
+		&:hover
+			color lightgrey
+		&:after
+			margin-left 30px
+			display inline
+			content '~'
+			color white
+	&__menu a:last-of-type
+		&:after
+			display none
+
+	&__icons
+		display block
+		float right
+		line-height 70px
+	&__icon-btn
+		margin-left 15px
+		padding-y 15px
+		vertical-align middle
+		background none	
+		border none
+	&__icon
+		size 16px
+		fill white
+		transition fill .1s
+	&__icon-btn:hover &__icon
+		fill lightgrey
