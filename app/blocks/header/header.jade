@@ -19,7 +19,12 @@ mixin header(data)
 					+e('button').icon-btn
 						+icon('instagram').icon
 		+wrapper
-			+e.baner
+			+e.banner
+				+e.banner-container
 					+e.title=data.title
 					+e.desc=data.desc
-			+e.icon
+					+e.button-block
+						+e('button').button
+							| Our menu
+			+e.big-icon
+

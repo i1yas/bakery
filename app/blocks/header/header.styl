@@ -1,6 +1,9 @@
+$root-height = 900px
+$nav-height = 70px
+
 .header
 	display block
-	height 900px
+	height $root-height
 	color white
 	background-image url(../images/header/background.jpg)
 	background-position 50% 50%
@@ -16,12 +19,12 @@
 		float left
 		font-family $scriptin
 		font-size 30px
-		line-height 55px
+		line-height $nav-height - 15px
 	
 	&__menu
 		margin-left 4%
 		float left
-		line-height 70px
+		line-height $nav-height
 	&__menu-item
 		padding-left 37px
 		font-family $alegreya
@@ -29,6 +32,7 @@
 		text-transform uppercase
 		text-decoration none
 		color white
+		transition color .1s
 		&:hover
 			color lightgrey
 		&:after
@@ -43,7 +47,7 @@
 	&__icons
 		display block
 		float right
-		line-height 70px
+		line-height $nav-height
 	&__icon-btn
 		margin-left 15px
 		padding-y 15px
@@ -56,3 +60,52 @@
 		transition fill .1s
 	&__icon-btn:hover &__icon
 		fill lightgrey
+		
+	&__banner
+		display flex
+		height $root-height - $nav-height
+		text-align center
+		align-items center
+	&__banner-container
+		flex-shrink 0
+		flex-basis 100%
+	&__title
+		font-family $playfair
+		font-size 92px
+		letter-spacing 6px
+		text-shadow 0 1px 0 grey
+		&:after
+			margin-x auto
+			margin-y 55px
+			display block
+			content ''
+			background-image url(../images/header/dashed_line.svg)
+			size 192px 14px
+	&__desc
+		margin-x auto
+		width 40%
+		font-size 24px
+		line-height 2
+	&__button-block
+		text-align center
+	&__button
+		margin-top 60px
+		padding 12px 47px
+		font-family $alegreya
+		font-weight bold
+		letter-spacing 6px
+		text-transform uppercase
+		color white
+		background-color rgba(86, 83, 76, .53)
+		border 1px dashed #9e9c93
+		transition background-color .1s, border .1s
+		&:hover
+			background-color rgba(86, 83, 76, .33)
+			border 1px dashed lightgrey
+	
+	&__big-icon
+		margin-x auto
+		margin-top -53px
+		background-image url(../images/header/big-icon.png)
+		size 106px
+	
