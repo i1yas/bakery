@@ -9,7 +9,7 @@ doctype html
 html(lang='ru')
 	include ../head/head
 	+page
-		+header
+		+header(getData('header'))
 		block content
 		+footer
 		

@@ -1,3 +1,19 @@
-mixin header()
+include ../icon/icon
+
+mixin header(data)
 	+b.header&attributes(attributes)
-		block
+		+e.navigation
+			+e.logo
+				| Gustoso
+			+e('nav').menu
+				- var topNavigation = data.topNavigation
+				- for(var i = 0; i < topNavigation.length; i++)
+					+e('span').menu-item=topNavigation[i]
+			+e.icons
+				+icon('twitter').icon
+				+icon('facebook').icon
+				+icon('instagram').icon
+		+e.baner
+			+e.title=data.title
+			+e.desc=data.desc
+		+e.icon
