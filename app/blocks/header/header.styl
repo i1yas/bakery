@@ -1,5 +1,6 @@
 $root-height = 900px
 $nav-height = 70px
+$icon-size = 106px
 
 .header
 	display block
@@ -8,6 +9,7 @@ $nav-height = 70px
 	background-image url(../images/header/background.jpg)
 	background-position 50% 50%
 	background-size cover
+	border-bottom 10px solid white
 
 	&__wrapper
 		clearfix()
@@ -104,8 +106,10 @@ $nav-height = 70px
 			border 1px dashed lightgrey
 	
 	&__big-icon
+		position relative
+		z-index 10
 		margin-x auto
-		margin-top -53px
+		margin-top -($icon-size / 2 + 5px)
 		background-image url(../images/header/big-icon.png)
-		size 106px
+		size $icon-size
 	
