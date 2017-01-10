@@ -2,20 +2,24 @@ include ../heading/heading
 
 mixin about()
 	+b.about&attributes(attributes)
-		+wrapper
-			+e.text
-				+heading('Art of cakes')._center
-					| We create delicious memries
-				+e.disc
-					| Quisque rtrum. Aenean imperdient. Etiam ulticies nisi vel augue. Carabitur ullamcorper ultricies nisi. Nam edget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipescing sem neque sed.
-				+e.position
-					| Chef Cook
-				+e.author
-					+e.name
-						| Benito
-					+e('img').avatar
-					+e.sname
-						| Gaspare
-				+e.quote
-					| Unique creations for unique occasions.
-			+e.pictures
+		+e.bg
+			+wrapper
+				+e.text
+					+heading('Art of cakes')._center
+						| We create delicious memries
+					+e.desc
+						| Quisque rtrum. Aenean imperdient. Etiam ulticies nisi vel augue. Carabitur ullamcorper ultricies nisi. Nam edget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipescing sem neque sed.
+					+e.position
+						| Chef Cook
+					+e.author
+						+e.name
+							| Benito
+						+e('img').avatar(src='assets/images/about/avatar.jpg' alt='')
+						+e.sname
+							| Gaspare
+					+e.quote-block
+						+e.quote-mark._left “
+						+e.quote
+							| Unique creations for unique occasions.
+						+e.quote-mark._right ”
+				+e.pictures

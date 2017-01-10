@@ -1,5 +1,74 @@
 .about
 	display block
 	background-image url(../images/about/background.jpg)
+	&__bg
+		background-image linear-gradient(to top, transparent, 12%, rgba(white, .73))
 	&__wrapper
 		padding-top 55px
+		display flex
+	&__text
+		text-align center
+		flex-basis 50%
+	&__desc
+		margin-x auto
+		margin-bottom 40px
+		width 80%
+		line-height 2
+	&__position
+		margin-bottom 40px
+		font-family $alegreya
+		font-size 24px
+		font-weight bold
+	&__author
+		margin-bottom 30px
+	&__name, &__sname
+		padding 15px 22px
+		display inline-block
+		font-family $alegreya
+		font-size 24px
+		vertical-align middle
+		border-top 1px solid #d7d5ca
+		border-bottom 1px solid #d7d5ca
+	&__name
+		margin-right 19px
+	&__sname
+		margin-left 17px
+	&__avatar
+		display inline-block
+		vertical-align middle
+		border 5px solid white
+		border-radius 50%
+	&__quote-block
+		margin-x auto
+		margin-bottom 20px
+		width 65%
+	&__quote
+		display inline-block
+		width 60%
+		font-family $scriptin
+		font-size 24px
+		color #a47d5e
+	&__quote-mark
+		display inline-block
+		width 19%
+		font-family 'Times New Roman', Times, serif
+		font-size 60px
+		color rgba($taupe, .5)
+		&_right
+			vertical-align text-top
+		
+		// &:after, &:before
+		// 	display inline-block
+		// 	color $taupe
+		// 	font-size 60px
+		// 	font-family "Times New Roman", Times, serif
+			
+		// &:before
+		// 	content '“'
+		// 	left -10px
+		// &:after
+		// 	content '”'
+		// 	right -5px
+	&__pictures
+		flex-basis 50%
+	
