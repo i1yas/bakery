@@ -23,3 +23,12 @@ mixin about()
 							| Unique creations for unique occasions.
 						+e.quote-mark._right ”
 				+e.pictures
+					+e.stamp
+						| Tastes so good!
+					+e.photos
+						- var path
+						- for(var i = 0; i < 4; i++)
+							- path = 'assets/images/about/photos/' + (i + 1) + '.jpg'
+							+e.photo-container
+								+e('img').photo(src=path alt='')
+								+e.photo-frame
