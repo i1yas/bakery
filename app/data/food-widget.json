@@ -1,0 +1,30 @@
+[
+	{
+		"title": "Tasty pancakes",
+		"sign": "season favourite",
+		"desc": "Meacenas nec odlo et ante tinclidunt tempus. Denec vetae sapien ut libero venenatis facibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus.",
+		"minutesReady": 40,
+		"rating": 4
+	},
+	{
+		"title": "Red Velvet Cheesecake",
+		"sign": "Swirl Brownies",
+		"desc": "The fluffier and smooth you can get the cheesecake mixture, the easier it will be to spread. I think this is best served the next day!",
+		"minutesReady": 80,
+		"rating": 3
+	},
+	{
+		"title": "Chocolate Cake",
+		"sign": "Easy to make",
+		"desc": "This cake is easy to make, and it's so delicious. Everyone that's tried it has said it tasted just like the ones in a deli! You'll love it!",
+		"minutesReady": 450,
+		"rating": 5
+	},
+	{
+		"title": "Best Brownies",
+		"sign": "Magnificent",
+		"desc": "Worth a try, very easy recipe yielding above average brownies. When the recipe says not to overcook, don't...depending on your oven 25 minutes is probably long enough. They may not look don...",
+		"minutesReady": 60,
+		"rating": 4
+	}
+]

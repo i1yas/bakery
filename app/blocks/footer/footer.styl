@@ -1,2 +1,33 @@
 .footer
 	display block
+	&__wrapper
+		padding-y 70px
+		display flex
+	&__side
+		flex-basis 41%
+		flex-shrink 0
+	&__navigation
+		padding-x 7.5%
+		padding-y 24px
+		display flex
+		font-family $alegreya
+		font-size 14px
+		color #56534c
+		border-top 1px solid #c2beba
+		border-bottom 1px solid #c2beba
+		justify-content space-between
+	&__nav-element
+		text-decoration none
+		text-transform uppercase
+		color #56534c
+		&:hover
+			color darken(#56534c, 60%)
+	&__nav-decoration
+		&:before
+			display inline
+			content '~'
+	&__logo
+		margin-x 3%
+		display inline-block
+		font-family $scriptin
+		font-size 30px

@@ -1,0 +1,21 @@
+{
+	"title": "The Jibarito sandwich",
+	"sign": "The best sandwich you've ever tasted!",
+	"prep": 15,
+	"cook": 35,
+	"ready": 50,
+	"ingredients": [
+		{
+			"title": "Class aptent",
+			"desc": "Quot alienum persecuti ut eam, nam ad atqui primis nasquam"
+		},
+		{
+			"title": "Nulla eget",
+			"desc": "Nullam dicum fells eu pede mollis pretium Integer tincidut"
+		},
+		{
+			"title": "Sed nibh parus",
+			"desc": "Aenean eleifend tellus leo ligula, porttitor eu, consequat vitae."
+		}
+	]
+}

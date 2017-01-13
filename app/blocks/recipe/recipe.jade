@@ -1,0 +1,38 @@
+mixin recipe(data)
+	+b.recipe&attributes(attributes)
+		+wrapper
+			+heading(data.title)._center=data.sign
+			+e.content
+				+e.ingredients
+					- var ing
+					- var path
+					- for(var i = 0; i < data.ingredients.length; i++)
+						- ing = data.ingredients[i]
+						- path = 'assets/images/recipe/ingredients/' + (i + 1) + '.jpg'
+						+e.ingredient
+							+e('img').ingredient-picture(src=path alt='')
+							+e.ingredient-title=ing.title
+							+e.ingredient-desc=ing.desc
+				+e.right-side
+					+e('img').large-picture(src='assets/images/recipe/picture.jpg' alt='')
+					+e('button').button
+						| Full recipe
+					+e.timings
+						+e.timing
+							+e.timing-title
+								| Prep
+							+e.timing-amount=data.prep
+							+e.timing-unit
+								| mins
+						+e.timing
+							+e.timing-title
+								| Cook
+							+e.timing-amount=data.cook
+							+e.timing-unit
+								| mins
+						+e.timing._ready
+							+e.timing-title
+								| Ready in
+							+e.timing-amount=data.ready
+							+e.timing-unit
+								| mins

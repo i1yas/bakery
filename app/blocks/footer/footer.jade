@@ -1,3 +1,19 @@
-mixin footer()
+mixin footer(data)
 	+b.footer&attributes(attributes)
-		block
+		+wrapper
+			+e.side._left
+				+e('nav').navigation
+					- var half = Math.round(data.length / 2)
+					- for(var i = 0; i < half; i++)
+						+e('a').nav-element(href="#")=data[i]
+						- if(i !== half - 1)
+							+e.nav-decoration
+			+e.logo
+				| Gustoso
+			+e.side._right
+				+e('nav').navigation
+					- var half = Math.round(data.length / 2)
+					- for(var i = half; i < data.length; i++)
+						+e('a').nav-element(href="#")=data[i]
+						- if(i !== data.length - 1)
+							+e.nav-decoration

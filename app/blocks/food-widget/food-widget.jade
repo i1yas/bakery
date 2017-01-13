@@ -1,0 +1,44 @@
+include ../wrapper/wrapper
+include ../icon/icon
+
+mixin food-widget(data)
+	+b.food-widget&attributes(attributes)
+		+wrapper
+			+e.widget-box
+				+e.picture-container
+					+e.rating-stars
+						- var rating = data[0].rating
+						- for(var i = 0; i < 5; i++)
+							- if(rating <= 0)
+									+icon('star').rating-star._stroke
+								- else
+									+icon('star').rating-star
+								- rating--
+					+e('img').picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+				+e.text-container
+					+heading(data[0].title)=data[0].sign
+					+e.desc=data[0].desc
+					+e.slider
+						+e('button').arrow._left
+							+icon('arrow_left').arrow-icon
+						+e.slider-items
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+							+e('button').slider-item
+								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+						+e('button').arrow._right
+							+icon('arrow_left').arrow-icon
+			+e.ready-container
+					+e.ready-sign
+						| Ready in
+					+e.ready-amount=data[0].minutesReady
+					+e.ready-min
+						| mins

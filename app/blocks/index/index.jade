@@ -1,5 +1,9 @@
 include ../about/about
+include ../food-widget/food-widget
+include ../recipe/recipe
 
 mixin index()
 	+b.index&attributes(attributes)
 		+about
+		+food-widget(getData('food-widget'))
+		+recipe(getData('recipe'))

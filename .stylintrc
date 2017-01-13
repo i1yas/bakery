@@ -74,6 +74,7 @@
 		"height",
 		"min-height",
 		"max-height",
+		"size",
 
 		"table-layout",
 		"empty-cells",

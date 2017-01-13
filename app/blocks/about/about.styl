@@ -9,6 +9,7 @@ $frame-padding = 5px
 		background-image linear-gradient(to top, transparent, 12%, rgba(white, .73))
 	&__wrapper
 		padding-top 55px
+		padding-bottom 40px
 		display flex
 		align-items center
 	&__text
@@ -62,8 +63,8 @@ $frame-padding = 5px
 		&_right
 			vertical-align text-top
 	&__pictures
-		flex-basis 50%
 		position relative
+		flex-basis 50%
 	&__stamp
 		position absolute
 		z-index 10
@@ -73,6 +74,7 @@ $frame-padding = 5px
 		margin-left -(247px / 2)
 		padding-x 45px
 		padding-top 98px
+		size 247px
 		font-family $alegreya
 		font-size 30px
 		line-height 33px
@@ -80,7 +82,6 @@ $frame-padding = 5px
 		text-transform uppercase
 		color #c9b176
 		background-image url(../images/about/stamp.png)
-		size 247px
 	&__photos
 		clearfix()
 	&__photo-container
@@ -95,5 +96,5 @@ $frame-padding = 5px
 		position absolute
 		top $frame-padding
 		left $frame-padding
-		border $frame-padding solid white
 		size ($photo-width - 2*$frame-padding) ($photo-height - 2*$frame-padding)
+		border $frame-padding solid white
