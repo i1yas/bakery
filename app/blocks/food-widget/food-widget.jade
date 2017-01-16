@@ -26,7 +26,7 @@ mixin food-widget(data)
 								+heading(data[i].title)=data[i].sign
 								+e.desc=data[i].desc
 					+e.slider
-						+e('button').arrow._left
+						+e('button').arrow._left#slider-left-arrow
 							+icon('arrow_left').arrow-icon
 						+e.slider-items#slider-items
 							- var path
@@ -35,7 +35,7 @@ mixin food-widget(data)
 								+e.slide-wrapper
 									+e('button').slider-item
 										+e.slider-picture(src=path alt='')
-						+e('button').arrow._right
+						+e('button').arrow._right#slider-right-arrow
 							+icon('arrow_left').arrow-icon
 			+e.ready-container
 					+e.ready-sign

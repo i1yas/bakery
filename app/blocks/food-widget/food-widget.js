@@ -10,6 +10,10 @@ const foodWidget = $ => {
 		picture: $('#picture-items'),
 		nums: $('#num-items')
 	};
+	const arrows = {
+		left: $('#slider-left-arrow'),
+		right: $('#slider-right-arrow')
+	};
 
 	carouselElement.slick({
 		infinite: true,
@@ -19,41 +23,44 @@ const foodWidget = $ => {
 	});
 
 	carouselElement.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-		const diff = currentSlide - nextSlide;
 		for (const key in presentations) {
 			if ({}.hasOwnProperty.call(presentations, key)) {
-				if (diff > 0) {
-					presentations[key].slick('slickPrev');
-				}else if (diff < 0) {
-					presentations[key].slick('slickNext');
-				}
+				presentations[key].slick('slickGoTo', nextSlide);
 			}
 		}
 	});
 
+	arrows.left.on('click', function (){
+		carouselElement.slick('slickPrev');
+	});
+	arrows.right.on('click', function (){
+		carouselElement.slick('slickNext');
+	});
+
 	presentations.text.slick({
-		slidesToShow: config.slidesToScroll,
-		slidesToScroll: 1,
+		slidesToScroll: config.slidesToScroll,
+		slidesToShow: 1,
 		arrows: false,
 		fade: true,
 		swipe: false
 	});
 
 	presentations.picture.slick({
-		slidesToShow: config.slidesToScroll,
-		slidesToScroll: 1,
+		slidesToScroll: config.slidesToScroll,
+		slidesToShow: 1,
 		arrows: false,
 		fade: true,
 		swipe: false
 	});
 
 	presentations.nums.slick({
-		slidesToShow: config.slidesToScroll,
-		slidesToScroll: 1,
+		slidesToScroll: config.slidesToScroll,
+		slidesToShow: 1,
 		arrows: false,
 		fade: true,
 		swipe: false
 	});
+
 };
 
 module.exports = foodWidget;
