@@ -5,40 +5,43 @@ mixin food-widget(data)
 	+b.food-widget&attributes(attributes)
 		+wrapper
 			+e.widget-box
-				+e.picture-container
-					+e.rating-stars
-						- var rating = data[0].rating
-						- for(var i = 0; i < 5; i++)
-							- if(rating <= 0)
-									+icon('star').rating-star._stroke
-								- else
-									+icon('star').rating-star
-								- rating--
-					+e('img').picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+				+e.pictures#picture-items
+					- var path
+					- for(var i = 0; i < data.length; i++)
+						- path = 'assets/images/food-widget/pictures/' + (i + 1) + '.jpg'
+						+e.picture-container
+							+e.rating-stars
+								- var rating = data[i].rating
+								- for(var k = 0; k < 5; k++)
+									- if(rating <= 0)
+											+icon('star').rating-star._stroke
+										- else
+											+icon('star').rating-star
+										- rating--
+							+e('img').picture(src=path alt='')
 				+e.text-container
-					+heading(data[0].title)=data[0].sign
-					+e.desc=data[0].desc
+					+e.text-items#text-items
+						- for(var i = 0; i < data.length; i++)
+							+e.text-item
+								+heading(data[i].title)=data[i].sign
+								+e.desc=data[i].desc
 					+e.slider
 						+e('button').arrow._left
 							+icon('arrow_left').arrow-icon
-						+e.slider-items
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
-							+e('button').slider-item
-								+e.slider-picture(src='assets/images/food-widget/pictures/1.jpg' alt='')
+						+e.slider-items#slider-items
+							- var path
+							- for(var i = 0; i < data.length; i++)
+								- path = 'assets/images/food-widget/pictures/' + (i + 1) + '.jpg'
+								+e.slide-wrapper
+									+e('button').slider-item
+										+e.slider-picture(src=path alt='')
 						+e('button').arrow._right
 							+icon('arrow_left').arrow-icon
 			+e.ready-container
 					+e.ready-sign
 						| Ready in
-					+e.ready-amount=data[0].minutesReady
+					+e.ready-amount#num-items
+						- for(var i = 0; i < data.length; i++)
+							+e.ready-amount-item=data[i].minutesReady
 					+e.ready-min
 						| mins
