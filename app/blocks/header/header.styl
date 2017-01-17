@@ -3,30 +3,72 @@ $nav-height = 70px
 $icon-size = 106px
 
 .header
-	display block
+	position relative
+	display flex
+	flex-direction column
 	height $root-height
 	color white
 	background-image url(../images/header/background.jpg)
 	background-position 50% 50%
 	background-size cover
 	border-bottom 10px solid white
-
-	&__wrapper
-		clearfix()
+	&:before // spacer
+		display none
+		size 100% $nav-height
+		content ''
+	&_opened
+		@media(max-width 1100px)
+			&:before
+				display block
+	@media(max-width 1100px)
+		position relative
 
 	&__navigation
 		background-color rgba(86, 83, 76, .53)
+		transition background-color .05s
+		flex-shrink 0
+		@media(max-width 1100px)
+			height $nav-height
+			background rgba(86, 83, 76, 0)
+			&_opened
+				position absolute
+				top 0
+				right 0
+				left 0
+				height auto
+				background-color rgba(86, 83, 76, .53)
+	
+	&__bottom
+		display flex
+		flex-direction column
+		width 100%
+		flex-grow 1
+
+	&__navbar
+		position relative
+		clearfix()
 
 	&__logo
 		float left
 		font-family $scriptin
 		font-size 30px
 		line-height $nav-height - 15px
+		@media(max-width 1100px)
+			float none
+			font-size 40px
 	
 	&__menu
 		margin-left 4%
 		float left
 		line-height $nav-height
+		@media(max-width 1100px)
+			display none
+			line-height initial
+			&_opened
+				margin-left 0
+				display block
+				float none
+				text-align center
 	&__menu-item
 		padding-left 37px
 		font-family $alegreya
@@ -35,6 +77,12 @@ $icon-size = 106px
 		text-decoration none
 		color white
 		transition color .1s
+		@media(max-width 1100px)
+			padding-y 10px
+			padding-left 0
+			display block
+			font-size 20px
+			letter-spacing 2px
 		&:hover
 			color lightgrey
 		&:after
@@ -42,6 +90,8 @@ $icon-size = 106px
 			display inline
 			content '~'
 			color white
+			@media(max-width 1100px)
+				display none
 	&__menu a:last-of-type
 		&:after
 			display none
@@ -50,6 +100,13 @@ $icon-size = 106px
 		display block
 		float right
 		line-height $nav-height
+		@media(max-width 1100px)
+			display none
+			&_opened
+				display block
+				float none
+				line-height initial
+				text-align center
 	&__icon-btn
 		margin-left 15px
 		padding-y 15px
@@ -62,11 +119,23 @@ $icon-size = 106px
 		transition fill .1s
 	&__icon-btn:hover &__icon
 		fill lightgrey
-		
+	&__mobile-nav
+		position absolute
+		top 0
+		right 0
+		height $nav-height
+		background none
+		border none
+		@media(min-width 1100px)
+			display none
+	&__mobile-nav-el
+		margin-y 10px
+		size ($nav-height - 20px) 5px
+		background-color white
 	&__banner
 		display flex
-		height $root-height - $nav-height
 		text-align center
+		flex 1
 		align-items center
 	&__banner-container
 		flex-shrink 0
@@ -108,8 +177,8 @@ $icon-size = 106px
 	&__big-icon
 		position relative
 		z-index 10
+		top ($icon-size / 2 + 5px)
 		margin-x auto
-		margin-top -($icon-size / 2 + 5px)
 		size $icon-size
 		background-image url(../images/header/big-icon.png)
 	
