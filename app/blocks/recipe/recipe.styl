@@ -1,3 +1,5 @@
+$timing-size = 200px
+
 .recipe
 	display block
 	background-image url(../images/recipe/background.png)
@@ -10,12 +12,22 @@
 		display flex
 		justify-content space-between
 		align-items center
+		@media(max-width 1100px)
+			align-items flex-start
+		@media(max-height 900px)
+			flex-direction column
 	&__ingredients
 		flex-basis 300px
 		flex-shrink 0
+		@media(max-width 900px)
+			flex-basis 100%
 	&__ingredient
 		margin-bottom 55px
 		text-align center
+		@media(max-width 900px)
+			display inline-block
+			width 32%
+			vertical-align top
 	&__ingredient-picture
 		margin-bottom 10px
 		border-radius 50%
@@ -60,10 +72,13 @@
 		position absolute
 		top -20px
 		right 10px
+		@media(max-width 650px)
+			position static
+			clearfix()
 	&__timing
 		margin-bottom 1px
-		padding-top 50px
-		size 200px
+		display table
+		size $timing-size
 		font-family $alegreya
 		font-size 18px
 		font-weight bold
@@ -71,17 +86,31 @@
 		background-color rgba(white, .8)
 		&_ready
 			margin-top -1px
-			padding-top 35px
 			background-image url(../images/recipe/ready_background.jpg)
 			background-position 50% 50%
 			background-size cover
+		@media(max-width 1100px)
+			size .75*$timing-size
+		@media(max-width 650px)
+			margin-bottom 0
+			margin-left 1px
+			float left
+			size 32% $timing-size
+			background-color rgba(white, .9)
+	&__timing-content
+		display table-cell
+		vertical-align middle
 	&__timing-title
 		margin-bottom 10px
 		letter-spacing 1px
 		text-transform uppercase
 		color #a47d5e
+		@media(max-width 1100px)
+			margin-bottom 5px
 	&__timing_ready &__timing-title
 		margin-bottom 7px
+		@media(max-width 1100px)
+			margin-bottom 5px
 
 	&__timing-amount
 		margin-bottom 5px
@@ -92,6 +121,8 @@
 	&__timing_ready &__timing-amount
 		font-size 92px
 		color #dfc691
+		@media(max-width 1100px)
+			font-size 60px
 
 	&__timing-unit
 		letter-spacing 1px

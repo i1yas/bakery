@@ -19,20 +19,23 @@ mixin recipe(data)
 						| Full recipe
 					+e.timings
 						+e.timing
-							+e.timing-title
-								| Prep
-							+e.timing-amount=data.prep
-							+e.timing-unit
-								| mins
+							+e.timing-content
+								+e.timing-title
+									| Prep
+								+e.timing-amount=data.prep
+								+e.timing-unit
+									| mins
 						+e.timing
-							+e.timing-title
-								| Cook
-							+e.timing-amount=data.cook
-							+e.timing-unit
-								| mins
+							+e.timing-content
+								+e.timing-title
+									| Cook
+								+e.timing-amount=data.cook
+								+e.timing-unit
+									| mins
 						+e.timing._ready
-							+e.timing-title
-								| Ready in
-							+e.timing-amount=data.ready
-							+e.timing-unit
-								| mins
+							+e.timing-content
+								+e.timing-title
+									| Ready in
+								+e.timing-amount=data.ready
+								+e.timing-unit
+									| mins
