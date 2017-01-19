@@ -4,9 +4,14 @@
 		padding-y 70px
 		display flex
 		justify-content space-between
+		flex-wrap wrap
 	&__side
 		flex-basis 41%
 		flex-shrink 0
+		@media(max-width 800px)
+			flex-basis 49%
+		@media(max-width 650px)
+			flex-basis 100%
 	&__navigation
 		padding-x 7.5%
 		display flex
@@ -16,6 +21,10 @@
 		border-top 1px solid #c2beba
 		border-bottom 1px solid #c2beba
 		justify-content space-between
+	&__side_right &__navigation
+		@media(max-width 650px)
+			border-top 0
+
 	&__nav-element
 		padding-y 24px
 		text-decoration none
@@ -33,3 +42,5 @@
 		display inline-block
 		font-family $scriptin
 		font-size 30px
+		@media(max-width 800px)
+			display none
