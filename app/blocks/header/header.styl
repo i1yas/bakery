@@ -22,6 +22,8 @@ $icon-size = 106px
 				display block
 	@media(max-width 1100px)
 		position relative
+	@media(max-width 800px)
+		height .8*$root-height
 
 	&__navigation
 		background-color rgba(86, 83, 76, .53)
@@ -83,6 +85,8 @@ $icon-size = 106px
 			display block
 			font-size 20px
 			letter-spacing 2px
+		@media(max-width 800px)
+			padding-y 5px
 		&:hover
 			color lightgrey
 		&:after
@@ -115,6 +119,8 @@ $icon-size = 106px
 		border none
 		@media(max-width 1100px)
 			margin-right 15px
+		@media(max-width 600px)
+			padding-y 7px
 	&__icon
 		size 16px
 		fill white
@@ -154,11 +160,19 @@ $icon-size = 106px
 			size 192px 14px
 			content ''
 			background-image url(../images/header/dashed_line.svg)
+		@media(max-width 600px)
+			font-size 60px
+			&:after
+				margin-y 20px
 	&__desc
 		margin-x auto
 		width 40%
 		font-size 24px
 		line-height 2
+		@media(max-width 800px)
+			width 80%
+		@media(max-width 600px)
+			width 100%
 	&__button-block
 		text-align center
 	&__button
@@ -175,7 +189,8 @@ $icon-size = 106px
 		&:hover
 			background-color rgba(86, 83, 76, .33)
 			border 1px dashed lightgrey
-	
+		@media(max-width 600px)
+			margin-top 20px
 	&__big-icon
 		position relative
 		z-index 10
