@@ -2,7 +2,7 @@ include ../wrapper/wrapper
 include ../icon/icon
 
 mixin header(data)
-	+b.header&attributes(attributes)
+	+b.header#Welcome&attributes(attributes)
 		+e.navigation
 			+wrapper
 				+e.navbar
@@ -11,7 +11,7 @@ mixin header(data)
 					+e('nav').menu
 						- var topNavigation = data.topNavigation
 						- for(var i = 0; i < topNavigation.length; i++)
-							+e('a').menu-item(href='#')=topNavigation[i]
+							+e('a').menu-item(href=('#' + topNavigation[i]))=topNavigation[i]
 					+e.icons
 						+e('button').icon-btn
 							+icon('twitter').icon
